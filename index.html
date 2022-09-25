@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>ColaVendingMachine</title>
+    </head>
+    <body>
+        <header class="tit_logo">
+            <span class="VisualHidden">ColaCola</span>
+        </header>
+
+        <main class="VendingMachine">
+            <section class="Order">
+                <!-- ★★★★★li를 label로 하면 버튼 전체 클릭-->
+                <!-- <ul class="menu">
+                    <li class="Original_Cola">Original_Cola
+                        <button class="btn_pricetag">1000원</button><!--버튼을 중복되게 계속 넣는게 맞나? 스크린리더가 읽어야 하는 부분이라 어쩔 수 없는 것 같기도 -->
+                    </li>
+                    <li class="Violet_Cola">Violet_Cola
+                        <button class="btn_pricetag">1000원</button>
+                    </li>
+                    <li class="Yellow_Cola">Yellow_Cola
+                        <button class="btn_pricetag">1000원</button>
+                    </li>
+                    <li class="Cool_Cola">Cool_Cola
+                        <button class="btn_pricetag">1000원</button>
+                    </li>
+                    <li class="Green_Cola">Green_Cola
+                        <button class="btn_pricetag">1000원</button>
+                    </li>
+                    <li class="Orange_Cola">Orange_Cola
+                        <button class="btn_pricetag">1000원</button>
+                    </li>
+                </ul> -->
+                <div class="Payment">
+                    <span class="txt_Change">1,000</span> 
+                    <button class="btn_Change">거스름돈 반환</button>
+                    <input type="text" class="txt_Deposit" placeholder="입금액 입력">
+                    <button type="submit" class="btn_Deposit">입금</button>
+                    <ul class="Cart">
+                        <li class="Cart_Original">Original_Cola</li>
+                        <li class="Cart_Green">Green_Cola</li>
+                    </ul>
+                    <button class="btn_get">획득</button>
+                </div>
+            </section>
+            <section class="MyBag">
+                <h3 class="MyWallet"><span class="txt_MyWallet">25,000</span></h3>
+                <!--획득한 음료
+                    <ul class="MyPocket">
+                    <div class="MyPocket_Beverage">
+                        <li class="Beverage_Original">Original_Cola</li>
+                        <li class="Beverage_Green">Green_Cola</li>
+                        <li class="Beverage_Orange">Orange_Cola</li>
+                        <li class="Beverage_Violet">Violet_Cola</li>
+                    </div>
+                    <span class="total">9,000</span>
+                </ul> -->
+            </section>
+        </main>
+    </body>
+</html>

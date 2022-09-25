@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+*{  padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500 ;
+}
+
+/* 전체 배경색 */
+body {
+    background-color: #EAE8FE;
+}
+
+/* 타이틀 로고 */
+.tit_logo {
+    background-image: url(/VendingMachine/img/Logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 386px;
+    height: 183px;
+    width: 100%;
+}
+/* class명으로 blind는 지양합니다. 타이틀명 마크업 용 */
+.VisualHidden {
+    display:block;
+    overflow:hidden;
+    Font-size:1px;
+    line-height:0;
+    text-indent:-9999px;
+}
+
+/* 자판기 전체 영역 */
+.VendingMachine {
+    margin: 68px 0 171px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 28px;
+}
+
+/* 주문하는 왼쪽 구역 */
+.Order {
+    background-color: #FFFFFF;
+    margin-left: auto;
+    width: 360px;
+    height: 545px;
+}
+
+/* 음료 목록 메뉴판 */
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    grid-gap: 12px;
+    margin: 28px 24px 20px 24px;
+    place-items: center;
+}
+
+/* 메뉴판 속 음료수 종류 */
+li[class$="Cola"] {
+    width: 94px;
+    height: 130px;
+    border-radius: 10px;
+    list-style: none;
+    font-style: normal;
+    line-height: 13px;
+    font-size: 9px;
+    text-align: center;
+}
+
+/* 메뉴판 음료 테두리 효과 */
+/* li[class^="Original", "green"] 왜 이건 안될까*/
+.Original_Cola , .Green_Cola {
+    border : 3px solid #6327FE;
+}
+.Violet_Cola , .Yellow_Cola , .Cool_Cola , .Orange_Cola {
+    border : none;
+    box-shadow: 0 0 4px;
+}
+/* 메뉴판 속 음료 가격 버튼 */
+.btn_pricetag{
+    width: 70px;
+    height: 22px;
+    background: #6327FE;
+    border-radius: 50px;
+    border: none;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin: 7px 0 9px 0;
+}
+/* 임시★★선택자셀렉터 수정하기, 리스트에서 오리지널만 선택하게 라든지 */
+.Original_Cola:before {
+    content: "";
+    width: 36px; height: 65px;
+    background-image: url(/VendingMachine/img/cola_sprites.png) ;
+    background-position: -178px -10px;
+    display: inline-block;
+    margin-top: 12.5px;
+}
+
+
+/* 결제 영역 */
+.Payment {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    place-items: center;
+    grid-gap: 12px;
+    margin: 20px 27px 28px 27px ;
+}
+/* 잔액 표시와 가상요소 */
+.txt_Change {
+    width: 200px;
+    height: 32px;
+    background: #EAE8FE;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    /* text-align: right; */
+    padding-left: 10px;
+}
+.txt_Change:before {
+    content:"잔액:"
+}
+.txt_Change:after {
+    content:"원"
+}
+
+/* 거스름돈 반환 */
+.btn_Change , .btn_Deposit {
+    width: 94px;
+    height: 32px;
+    background: #FFFFFF;
+    border: none;
+    box-shadow: 0 0 4px;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    border-radius: 5px;
+}
+
+/* 입금액 입력 */
+.txt_Deposit {
+    width: 200px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+}
+
+/* 장바구니 카트 */
+.Cart {
+    list-style: none;
+    width: 200px;
+    height: 106px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    background: #EAE8FE;
+}
+/* 카트에 담긴 음료들 */
+li[class^="Cart"] {
+    width: 170px;
+    height: 46px;
+    background: #FFFFFF;
+    margin: 12px 18px 0px 12px;
+    border-radius: 5px;
+}
+/* li[class$="Original"]:before 이렇게는 안되나 */
+.Cart_Original:before {
+    content: "";
+    width: 17.93px; height: 32.93px;
+    background-image: url(/VendingMachine/img/cola_sprites.png) ;
+    /* background-size: contain;★★image sprite 상태에서 크기조절하는 법..? */
+    background-position: -178px -10px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.Cart_Original:after {
+    content: "1";
+    width: 30px;
+    height: 30px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+}
+/* .Cart_Green_Cola */
+/* 획득 버튼 */
+.btn_get {
+    width: 94px;
+    height: 106px;
+    background: #6327FE;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 4px;
+    color: #FFFFFF;
+}
+
+
+
+/* 현재 내 잔고와 장바구니를 나타내는 오른쪽 구역*/
+.MyBag {
+    /* 처음 구역 나누려고 묶어뒀는데 쓸모없게 됨 */
+}
+
+/* 소지금 영역*/
+.MyWallet {
+    background-color: #FFFFFF;
+    width: 360px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+/* 소지금 */
+.txt_MyWallet {
+    position: absolute;
+    width: 306px;
+    height: 32px;
+    background: #EAE8FE;
+    border-radius: 5px;
+    margin: 9px 27px;
+}
+.txt_MyWallet:before {
+    content:"소지금:"
+}
+.txt_MyWallet:after {
+    content:"원"
+}
+
+
+
+/* 획득한 음료 영역 */
+.MyPocket {
+    background-color: #FFFFFF;
+    width: 360px;
+    height: 474px;
+    list-style: none;
+    text-align: center;
+    padding: 25px 27px;
+}
+/* 획득한 음료 리스트 */
+.MyPocket_Beverage {
+    width: 306px;
+    height: 364px;
+    background: #EAE8FE;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    margin: 13px 0 6px;
+    padding: 12px 18px 0px 12px;
+}
+li[class^="Beverage"] {
+    /* width: 100%;
+    height: 100%; */
+    background: #FFFFFF;
+    margin: 12px 18px 0px 12px;
+    border-radius: 5px;
+}
+
+
+/* 총금액 */
+.total {
+    
+}
+.total:before {
+    content:"총금액:"
+}
+.total:after {
+    content:"원"
+}
